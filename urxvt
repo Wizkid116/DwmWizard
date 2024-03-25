@@ -1,0 +1,15 @@
+#*foreground: #00cc00
+#URxvt.termName:	Terminal
+URxvt.foreground:	#ffffff
+URxvt.background:	#010101
+URxvt.font:		xft:monospace:size=11
+#URxvt.font:		xft:inconsolata:size=11
+URxvt.scrollBar: 	false
+URxvt.cursorColor: 	white
+URxvt.geometry:		400x400
+URxvt.cursorBlink:	true
+
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt_keysym.Shift-Control-V: eval:paste_clipboard
+
+Xcursor.theme: adwaita-cursor
