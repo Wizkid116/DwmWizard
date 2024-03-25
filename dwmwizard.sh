@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
-$SRC=~/dwmwizard
-$BLD=~/dwmwizard/build
+SRC=~/dwmwizard
+BLD=~/dwmwizard/build
 mkdir $BLD
 
 cd $BLD
