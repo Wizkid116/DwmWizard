@@ -36,6 +36,8 @@ cd $DWM
 cd $BLD
 	echo "Configuring urxvt"
 	cd $SRC && cp urxvt ~/.Xdefaults
+  sudo cp startdwm /usr/local/bin/startdwm
+  sudo cp desktop /usr/share/xsessions/dwm.desktop
 
-echo "Installation complete"
+  echo "Installation complete"
 exit 0
