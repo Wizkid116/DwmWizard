@@ -38,6 +38,7 @@ cd $BLD
 	cd $SRC && cp urxvt ~/.Xdefaults
   sudo cp startdwm /usr/local/bin/startdwm
   sudo cp desktop /usr/share/xsessions/dwm.desktop
+  sudo chmod +x /usr/local/bin/startdwm
 
   echo "Installation complete"
 exit 0
