@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 SRC=~/DwmWizard
-BLD=~/$SRC/build
-DWM=~/$SRC/build/dwm-6.5
-SLS=~/$SRC/build/slstatus-1.0
-DMU=~/$SRC/build/dmenu-5.3
+BLD=$SRC/build
+DWM=$SRC/build/dwm-6.5
+SLS=$SRC/build/slstatus-1.0
+DMU=$SRC/build/dmenu-5.3
 mkdir $BLD
 
 cd $BLD
