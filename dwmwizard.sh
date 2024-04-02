@@ -5,7 +5,15 @@ BLD=$SRC/build
 DWM=$SRC/build/dwm-6.5
 SLS=$SRC/build/slstatus-1.0
 DMU=$SRC/build/dmenu-5.3
-mkdir $BLD
+if [ ! -d $BLD ]; then
+	mkdir $BLD
+else 
+       	echo "Build directory already exists, rebuilding..."
+	for ((i=5; i>=1; i--)); do
+		echo $i
+		sleep 1
+	done
+fi
 
 cd $BLD
 	wget https://dl.suckless.org/dwm/dwm-6.5.tar.gz
