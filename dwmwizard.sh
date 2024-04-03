@@ -1,5 +1,5 @@
 #!/bin/bash
-#use set -x for debugging
+#use set -n for debugging
 set -e
 #defining variables
 SRC=~/DwmWizard
