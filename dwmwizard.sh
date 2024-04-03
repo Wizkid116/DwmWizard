@@ -1,10 +1,13 @@
 #!/bin/bash
+#use set -x for debugging
 set -e
+#defining variables
 SRC=~/DwmWizard
 BLD=$SRC/build
 DWM=$SRC/build/dwm-6.5
 SLS=$SRC/build/slstatus-1.0
 DMU=$SRC/build/dmenu-5.3
+#checks if the build directory exists. If not, will sleep for 5 seconds then rebuilds everything
 if [ ! -d $BLD ]; then
 	mkdir $BLD
 else 
@@ -14,7 +17,7 @@ else
 		sleep 1
 	done
 fi
-
+#downloads and extracts programs
 cd $BLD
 	wget https://dl.suckless.org/dwm/dwm-6.5.tar.gz
 	wget https://dl.suckless.org/tools/dmenu-5.3.tar.gz
@@ -26,21 +29,21 @@ cd $BLD
 	rm dmenu-*.tar.gz
 	rm slstatus-*.tar.gz
 	sudo -v
-
+#builds Slstatus
 cd $SLS
 	echo "Building slstatus"
 	cp $SRC/slstatus $SLS/config.h
 	sudo make clean install
-
+#builds Dmenu
 cd $DMU
 	echo "Building dmenu"
 	sudo make clean install
-
+#builds DWM
 cd $DWM
 	echo "Building dwm"
 	cp $SRC/dwm $DWM/config.h
 	sudo make clean install
-
+#copies config files for urxvt and LightDM to the proper places, copies startdwm script to /usr/local/bin, and makes it executable
 cd $BLD
 	echo "Configuring urxvt"
 	cd $SRC && cp urxvt ~/.Xdefaults
