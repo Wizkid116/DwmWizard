@@ -16,7 +16,7 @@ fi
 cd $BLD
 	wget $DL1 && wget $DL2 && wget $DL3
 	cat *.tar.gz | tar -xvf - -i
-	cat *.tar.gz | rm
+	rm *.tar.gz
 	sudo -v
 #builds Slstatus
 cd $SLS
