@@ -1,7 +1,7 @@
 #!/bin/bash
 #use set -n for debugging
 set -n
-source deps.sh
+source deps
 #checks if the build directory exists. If not, will sleep for 5 seconds then rebuilds everything
 if [ ! -d $BLD ]; then
 	mkdir $BLD
