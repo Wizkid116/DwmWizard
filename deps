@@ -1,10 +1,14 @@
-#Dependencies and variables for DwmWizard
+#Define which software versions to use (uses latest by default)
+DWMVER=dwm-6.5
+DMUVER=dmenu-5.3
+SLSVER=slstatus-1.0
+#Define source and build directories
 SRC=~/DwmWizard
 BLD=$SRC/build
-DWM=$BLD/dwm-6.5
-SLS=$BLD/slstatus-1.0
-DMU=$BLD/dmenu-5.3
-DL1=https://dl.suckless.org/dwm/dwm-6.5.tar.gz
-DL2=https://dl.suckless.org/tools/dmenu-5.3.tar.gz
-DL3=https://dl.suckless.org/tools/slstatus-1.0.tar.gz
-
+DWM=$BLD/$DWMVER
+SLS=$BLD/$SLSVER
+DMU=$BLD/$DMUVER
+#Define download links
+DL1=https://dl.suckless.org/dwm/$DWMVER.tar.gz
+DL2=https://dl.suckless.org/tools/$DMUVER.tar.gz
+DL3=https://dl.suckless.org/tools/$SLSVER.tar.gz
