@@ -92,6 +92,7 @@ compile_function "$DWM" "dwm"
 cd $BLD
 	echo "Configuring urxvt"
 	cd $SRC && cp urxvt ~/.Xdefaults
+  cp pepe.png ~/pepe.png
 	sudo cp startdwm /bin/startdwm
 	sudo cp desktop /usr/share/xsessions/dwm.desktop
 	sudo chmod +x /bin/startdwm
