@@ -1,3 +1,4 @@
 #!/bin/bash
 slstatus &
+feh --bg-scale ~/pepe.png &
 dwm
