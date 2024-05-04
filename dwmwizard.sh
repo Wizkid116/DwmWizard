@@ -32,10 +32,20 @@ uninstall_function(){
   echo "Uninstallation complete"
 }
 
-#check if first argument is uninstall
-if [ "$1" == "uninstall" ]; then
+#checks for arguments passed to the script
+if [ $# == 0 ]; then
+  echo "No argument provided"
+  echo "Usage: Install, Uninstall"
+  exit 3
+elif [ "$1" == "uninstall" ]; then
   uninstall_function
   exit 0
+elif [ "$1" == "install" ]; then
+  echo "Installing..."
+else
+  echo "Invalid argument"
+  echo "Usage: Install, Uninstall"
+  exit 4
 fi
 
 #check if build directory exists. If not, sleep for 5 seconds then rebuild everything
@@ -48,10 +58,6 @@ else
 		sleep 1
 	done
 fi
-
-#I've tried finding more efficient ways of doing this, but everyone I've
-#talked to says it's already pretty good. It gets the job done so
-#who cares I guess
 
 #Check what package manager is running, then download dependencies.
 if command -v pacman >/dev/null; then #Arch
@@ -79,7 +85,6 @@ fi
 cd $BLD
 	wget $DL1 && wget $DL2 && wget $DL3
 	cat *.tar.gz | tar -xzf - -i
-  #tar xvf $SLSVER.tar.gz && tar xvf $DMUVER.tar.gz && tar xvf $DWMVER.tar.gz
 	rm *.tar.gz
 
 #compile slstatus, dmenu, and dwm respectively
@@ -89,10 +94,9 @@ compile_function "$DWM" "dwm"
 
 #copies config files for urxvt and LightDM to the proper places, 
 #copies startdwm script to /usr/local/bin, and makes it executable
-cd $BLD
+cd $SRC
 	echo "Configuring urxvt"
-	cd $SRC && cp urxvt ~/.Xdefaults
-  cp pepe.png ~/pepe.png
+	cp urxvt ~/.Xdefaults && cp pepe.png ~/pepe.png
 	sudo cp startdwm /bin/startdwm
 	sudo cp desktop /usr/share/xsessions/dwm.desktop
 	sudo chmod +x /bin/startdwm
