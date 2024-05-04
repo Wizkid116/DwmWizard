@@ -6,8 +6,15 @@ Shell script that builds and installs my custom DWM comfig
 git clone https://github.com/Wizkid116/DwmWizard.git
 cd DwmWizard
 chmod +x dwmwizard.sh
-./dwmwizard.sh
+./dwmwizard.sh install
 ```
+
+## Uninstall
+If you ever want to uninstall DWM, issue the following command:
+```bash
+./dwmwizard.sh uninstall
+```
+
 ## TODO
 * Check for dependencies (possibly download them as well)
 * (on top of the previous one) download urxvt and lightdm
